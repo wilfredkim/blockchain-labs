@@ -4,7 +4,7 @@ public class Constants {
     public Constants() {
     }
 
-    public static final int DIFFICULTY = 10;
+    public static final int DIFFICULTY = 5;
     public static final int REWARD = 10;
     public static final int MAX_NONCE = Integer.MAX_VALUE;
 
