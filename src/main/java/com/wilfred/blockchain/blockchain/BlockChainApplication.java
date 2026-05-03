@@ -1,5 +1,7 @@
 package com.wilfred.blockchain.blockchain;
 
+import com.wilfred.blockchain.blockchain.blockchain.Block;
+import com.wilfred.blockchain.blockchain.blockchain.BlockChain;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -27,6 +29,8 @@ public class BlockChainApplication {
         miner.mine(block3, blockChain);
         System.out.println(":::: Blockchain: \n" + blockChain);
         System.out.println(":::::::Miner's reward!!!!!!!!: " + miner.getReward());
+
+        //merkle root calling!!
         List<String> transactions = List.of("Alice pays Bob 10 coins", "Bob pays Charlie 5 coins", "Charlie pays Dave 2 coins");
         MerkleRoot merkleRoot = new MerkleRoot(transactions);
         System.out.println("Merkle Root!!!!!!!!!!!!!!!!!!!!!!: " + merkleRoot.getMerkleRoot());

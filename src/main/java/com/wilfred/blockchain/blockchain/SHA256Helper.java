@@ -23,4 +23,5 @@ public class SHA256Helper {
             throw new RuntimeException(var5);
         }
     }
+
 }

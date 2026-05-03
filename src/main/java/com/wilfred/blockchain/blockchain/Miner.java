@@ -1,5 +1,8 @@
 package com.wilfred.blockchain.blockchain;
 
+import com.wilfred.blockchain.blockchain.blockchain.Block;
+import com.wilfred.blockchain.blockchain.blockchain.BlockChain;
+
 public class Miner {
     private double reward;
 

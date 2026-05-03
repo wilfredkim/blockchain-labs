@@ -1,14 +1,19 @@
-package com.wilfred.blockchain.blockchain;
+package com.wilfred.blockchain.blockchain.blockchain;
 
-import java.util.LinkedList;
-import java.util.List;
+import com.wilfred.blockchain.blockchain.cyptocurrency.Transaction;
+import com.wilfred.blockchain.blockchain.cyptocurrency.TransactionOutput;
+
+import java.util.*;
 
 public class BlockChain {
     //immutable!
-    private List<Block> blockChain;
+    private static List<Block> blockChain;
+    //we store every unspent transactions!!
+    public static Map<String, TransactionOutput> UTXOs; //list of all unspent transactions.
 
     public BlockChain() {
-        this.blockChain = new LinkedList<>();
+        BlockChain.UTXOs = new HashMap<>();
+        BlockChain.blockChain = new ArrayList<>();
     }
 
     public void addBlock(Block block) {
