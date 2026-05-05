@@ -39,8 +39,11 @@ public class App {
         block1.addTransaction(userA.transferMoney(userB.getPublicKey(), 40));
         miner.mine(block1, blockChain);
         Block block2 = new Block(block1.getHash());
-        block2.addTransaction(userA.transferMoney(userB.getPublicKey(), 40));
+        block2.addTransaction(userA.transferMoney(userB.getPublicKey(), 70));
         miner.mine(block2, blockChain);
+        Block block3 = new Block(block2.getHash());
+        block3.addTransaction(userB.transferMoney(userA.getPublicKey(), 60));
+        miner.mine(block3, blockChain);
 
 
         System.out.println("Miners Reward" +miner.getReward());

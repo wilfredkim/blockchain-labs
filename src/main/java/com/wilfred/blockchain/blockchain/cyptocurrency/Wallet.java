@@ -19,12 +19,14 @@ public class Wallet {
     private PublicKey publicKey;
 
     public Wallet() {
-    }
-
-    public Wallet(PrivateKey privateKey, PublicKey publicKey) {
         KeyPair keyPair = CyptoCurrencyHelper.ellipticCurveCrypto();
         this.privateKey = keyPair.getPrivate();
         this.publicKey = keyPair.getPublic();
+    }
+
+    public Wallet(PrivateKey privateKey, PublicKey publicKey) {
+        this.privateKey = privateKey;
+        this.publicKey = publicKey;
     }
 
     public Transaction transferMoney(PublicKey receiver, double amount){

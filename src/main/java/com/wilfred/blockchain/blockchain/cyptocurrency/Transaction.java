@@ -22,12 +22,11 @@ public class Transaction {
     private List<TransactionOutput> outputs;
 
     public Transaction(PublicKey sender, PublicKey receiver, double amount, List<TransactionInput> inputs) {
-        this.inputs = new ArrayList<>();
+        this.inputs = (inputs == null) ? new ArrayList<>() : inputs;
         this.outputs = new ArrayList<>();
         this.sender = sender;
         this.receiver = receiver;
         this.amount = amount;
-        this.inputs = inputs;
         calculateHash();
     }
 
@@ -75,7 +74,7 @@ public class Transaction {
     }
 
     public void calculateHash() {
-        String data = sender.toString() + receiver.toString() + amount;
+        String data =sender.toString() + receiver.toString() + amount;
         this.transactionId = CyptoCurrencyHelper.hash(data);
     }
 }
